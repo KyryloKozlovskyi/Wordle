@@ -9,6 +9,9 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <!--Global properties-->
+            <Color x:Key="PageBackgroundColor">Black</Color>
+            <Color x:Key="Color"></Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

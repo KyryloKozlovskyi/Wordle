@@ -6,9 +6,19 @@
     xmlns:local="clr-namespace:Wordle"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <!--TabBar navigation-->
+    <TabBar>
+        <Tab Title="About" Icon="about.png">
+            <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" Route="AboutPage" />
+        </Tab>
+        <Tab Title="Wordle" Icon="game.png">
+            <ShellContent Title="Wordle" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+        <Tab Title="Stats" Icon="stats.png">
+            <ShellContent Title="Stats" ContentTemplate="{DataTemplate local:StatsPage}" Route="StatsPage" />
+        </Tab>
+        <Tab Title="Settings" Icon="settings.png">
+            <ShellContent Title="Settings" ContentTemplate="{DataTemplate local:SettingsPage}" Route="SettingsPage" />
+        </Tab>
+    </TabBar>
 </Shell>

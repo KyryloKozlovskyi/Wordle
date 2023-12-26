@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wordle.StatsPage"
+             Title="STATS">
+    <!--Stats page-->
+    <ScrollView HeightRequest="420" WidthRequest="350" VerticalOptions="Start">
+        <VerticalStackLayout>
+            <Label 
+                Text="Time: 21:07 Date: 26/12/2023 Word: Sport Number of Guesses: 6 Emoji grid: ⬜ 🟨 🟩 "
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
