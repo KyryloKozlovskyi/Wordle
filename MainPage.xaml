@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Wordle.MainPage"
-             Title="WORDLE"
-             BackgroundColor="{DynamicResource PageBackgroundColor}">
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             Title="WORDLE">
     <!--Wordle page-->
     <VerticalStackLayout>
         <!--Game area grid for displaying letters (one box = 1 letter)-->
@@ -11,42 +11,44 @@
               HorizontalOptions="CenterAndExpand" RowSpacing="5"
               ColumnDefinitions="*,*,*,*,*"
               RowDefinitions="*,*,*,*,*,*">
-                <!--  Box view row 1  -->
+            <!--  Box view row 1  -->
+            <BoxView Grid.Row="0" Grid.Column="0" Color="#3A3A3C"/>
+            <BoxView Grid.Row="0" Grid.Column="1" Color="#3A3A3C"/>
+            <BoxView Grid.Row="0" Grid.Column="2" Color="#3A3A3C"/>
+            <BoxView Grid.Row="0" Grid.Column="3" Color="#3A3A3C"/>
+            <BoxView Grid.Row="0" Grid.Column="4" Color="#3A3A3C"/>
+            <!--  Box view row 2  -->
             <BoxView Grid.Row="1" Grid.Column="0" Color="#3A3A3C"/>
             <BoxView Grid.Row="1" Grid.Column="1" Color="#3A3A3C"/>
             <BoxView Grid.Row="1" Grid.Column="2" Color="#3A3A3C"/>
             <BoxView Grid.Row="1" Grid.Column="3" Color="#3A3A3C"/>
             <BoxView Grid.Row="1" Grid.Column="4" Color="#3A3A3C"/>
-                <!--  Box view row 2  -->
+            <!--  Box view row 3  -->
             <BoxView Grid.Row="2" Grid.Column="0" Color="#3A3A3C"/>
             <BoxView Grid.Row="2" Grid.Column="1" Color="#3A3A3C"/>
             <BoxView Grid.Row="2" Grid.Column="2" Color="#3A3A3C" />
             <BoxView Grid.Row="2" Grid.Column="3" Color="#3A3A3C" />
             <BoxView Grid.Row="2" Grid.Column="4" Color="#3A3A3C" />
-                <!--  Box view row 3  -->
+            <!--  Box view row 4  -->
             <BoxView Grid.Row="3" Grid.Column="0" Color="#3A3A3C" />
             <BoxView Grid.Row="3" Grid.Column="1" Color="#3A3A3C" />
             <BoxView Grid.Row="3" Grid.Column="2" Color="#3A3A3C" />
             <BoxView Grid.Row="3" Grid.Column="3" Color="#3A3A3C" />
             <BoxView Grid.Row="3" Grid.Column="4" Color="#3A3A3C" />
-                <!--  Box view row 4  -->
+            <!--  Box view row 5  -->
             <BoxView Grid.Row="4" Grid.Column="0" Color="#3A3A3C" />
             <BoxView Grid.Row="4" Grid.Column="1" Color="#3A3A3C" />
             <BoxView Grid.Row="4" Grid.Column="2" Color="#3A3A3C" />
             <BoxView Grid.Row="4" Grid.Column="3" Color="#3A3A3C" />
             <BoxView Grid.Row="4" Grid.Column="4" Color="#3A3A3C" />
-                <!--  Box view row 5  -->
+            <!--  Box view row 6  -->
             <BoxView Grid.Row="5" Grid.Column="0" Color="#3A3A3C" />
             <BoxView Grid.Row="5" Grid.Column="1" Color="#3A3A3C" />
             <BoxView Grid.Row="5" Grid.Column="2" Color="#3A3A3C" />
             <BoxView Grid.Row="5" Grid.Column="3" Color="#3A3A3C" />
             <BoxView Grid.Row="5" Grid.Column="4" Color="#3A3A3C" />
-                <!--  Box view row 6  -->
-            <BoxView Grid.Row="6" Grid.Column="0" Color="#3A3A3C" />
-            <BoxView Grid.Row="6" Grid.Column="1" Color="#3A3A3C" />
-            <BoxView Grid.Row="6" Grid.Column="2" Color="#3A3A3C" />
-            <BoxView Grid.Row="6" Grid.Column="3" Color="#3A3A3C" />
-            <BoxView Grid.Row="6" Grid.Column="4" Color="#3A3A3C" />
         </Grid>
+        <Button Text="New Wordle" MaximumWidthRequest="150" Margin="10"></Button>
+        <Label x:Name="test" Text="Word is: "></Label>
     </VerticalStackLayout>
 </ContentPage>

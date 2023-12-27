@@ -5,7 +5,8 @@
              Title="ABOUT">
     <!--About page. How to play/image examples-->
     <VerticalStackLayout HeightRequest="420" WidthRequest="350" VerticalOptions="Start">
-        <Label 
+        <Label
+            x:Name="test"
             Padding="10"
             Text="HOW TO PLAY"
             FontSize="28"

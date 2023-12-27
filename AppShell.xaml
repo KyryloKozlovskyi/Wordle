@@ -8,11 +8,11 @@
 
     <!--TabBar navigation-->
     <TabBar>
-        <Tab Title="About" Icon="about.png">
-            <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" Route="AboutPage" />
-        </Tab>
         <Tab Title="Wordle" Icon="game.png">
             <ShellContent Title="Wordle" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+        <Tab Title="About" Icon="about.png">
+            <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" Route="AboutPage" />
         </Tab>
         <Tab Title="Stats" Icon="stats.png">
             <ShellContent Title="Stats" ContentTemplate="{DataTemplate local:StatsPage}" Route="StatsPage" />

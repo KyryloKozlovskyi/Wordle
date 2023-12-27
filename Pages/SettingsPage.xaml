@@ -6,14 +6,14 @@
     <!--Settings page-->
     <VerticalStackLayout HorizontalOptions="Center" Margin="20">
         <!--Dark Theme Switch-->
-        <HorizontalStackLayout HorizontalOptions="Center">
+        <HorizontalStackLayout Spacing="20">
             <Label
                 Text="Dark Theme"
                 VerticalOptions="Center" 
-                HorizontalOptions="Center" />
+                HorizontalOptions="Start" />
             <Switch 
                 VerticalOptions="Center" 
-                HorizontalOptions="Center"/>
+                HorizontalOptions="End"/>
         </HorizontalStackLayout>
         <Line X1="350"
               Y1="0"
@@ -21,14 +21,14 @@
               Y2="0"
               Stroke="#3A3A3C" />
         <!--Easy Mode Switch-->
-        <HorizontalStackLayout HorizontalOptions="Center">
+        <HorizontalStackLayout Spacing="20">
             <Label
                 Text="Easy Mode"
                 VerticalOptions="Center" 
-                HorizontalOptions="Center" />
+                HorizontalOptions="Start" />
             <Switch 
                 VerticalOptions="Center" 
-                HorizontalOptions="Center"/>
+                HorizontalOptions="End"/>
         </HorizontalStackLayout>
         <Line X1="350"
               Y1="0"
@@ -36,7 +36,7 @@
               Y2="0"
               Stroke="#3A3A3C" />
         <!--Font Size Slider-->
-        <HorizontalStackLayout HorizontalOptions="Center" Margin="20">
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="20" Spacing="20">
             <Label
                 Text="Font Size"
                 VerticalOptions="Center" 
