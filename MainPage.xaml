@@ -11,44 +11,119 @@
               HorizontalOptions="CenterAndExpand" RowSpacing="5"
               ColumnDefinitions="*,*,*,*,*"
               RowDefinitions="*,*,*,*,*,*">
-            <!--  Box view row 1  -->
-            <BoxView Grid.Row="0" Grid.Column="0" Color="#3A3A3C"/>
-            <BoxView Grid.Row="0" Grid.Column="1" Color="#3A3A3C"/>
-            <BoxView Grid.Row="0" Grid.Column="2" Color="#3A3A3C"/>
-            <BoxView Grid.Row="0" Grid.Column="3" Color="#3A3A3C"/>
-            <BoxView Grid.Row="0" Grid.Column="4" Color="#3A3A3C"/>
-            <!--  Box view row 2  -->
-            <BoxView Grid.Row="1" Grid.Column="0" Color="#3A3A3C"/>
-            <BoxView Grid.Row="1" Grid.Column="1" Color="#3A3A3C"/>
-            <BoxView Grid.Row="1" Grid.Column="2" Color="#3A3A3C"/>
-            <BoxView Grid.Row="1" Grid.Column="3" Color="#3A3A3C"/>
-            <BoxView Grid.Row="1" Grid.Column="4" Color="#3A3A3C"/>
-            <!--  Box view row 3  -->
-            <BoxView Grid.Row="2" Grid.Column="0" Color="#3A3A3C"/>
-            <BoxView Grid.Row="2" Grid.Column="1" Color="#3A3A3C"/>
-            <BoxView Grid.Row="2" Grid.Column="2" Color="#3A3A3C" />
-            <BoxView Grid.Row="2" Grid.Column="3" Color="#3A3A3C" />
-            <BoxView Grid.Row="2" Grid.Column="4" Color="#3A3A3C" />
-            <!--  Box view row 4  -->
-            <BoxView Grid.Row="3" Grid.Column="0" Color="#3A3A3C" />
-            <BoxView Grid.Row="3" Grid.Column="1" Color="#3A3A3C" />
-            <BoxView Grid.Row="3" Grid.Column="2" Color="#3A3A3C" />
-            <BoxView Grid.Row="3" Grid.Column="3" Color="#3A3A3C" />
-            <BoxView Grid.Row="3" Grid.Column="4" Color="#3A3A3C" />
-            <!--  Box view row 5  -->
-            <BoxView Grid.Row="4" Grid.Column="0" Color="#3A3A3C" />
-            <BoxView Grid.Row="4" Grid.Column="1" Color="#3A3A3C" />
-            <BoxView Grid.Row="4" Grid.Column="2" Color="#3A3A3C" />
-            <BoxView Grid.Row="4" Grid.Column="3" Color="#3A3A3C" />
-            <BoxView Grid.Row="4" Grid.Column="4" Color="#3A3A3C" />
-            <!--  Box view row 6  -->
-            <BoxView Grid.Row="5" Grid.Column="0" Color="#3A3A3C" />
-            <BoxView Grid.Row="5" Grid.Column="1" Color="#3A3A3C" />
-            <BoxView Grid.Row="5" Grid.Column="2" Color="#3A3A3C" />
-            <BoxView Grid.Row="5" Grid.Column="3" Color="#3A3A3C" />
-            <BoxView Grid.Row="5" Grid.Column="4" Color="#3A3A3C" />
+            <!--  Frame row 1  -->
+            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <!--  Frame row 2  -->
+            <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="1" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="1" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="1" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <!--  Frame row 3  -->
+            <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <!--  Frame row 4  -->
+            <Frame Grid.Row="3" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="3" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="3" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="3" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="3" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <!--  Frame row 5  -->
+            <Frame Grid.Row="4" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="4" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="4" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="4" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="4" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <!--  Frame row 6  -->
+            <Frame Grid.Row="5" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="5" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="5" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="5" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="5" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
+                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
         </Grid>
-        <Button Text="New Wordle" MaximumWidthRequest="150" Margin="10"></Button>
+        <!-- User input -->
+        <VerticalStackLayout HorizontalOptions="Center">
+            <!-- Customized entry keyboard -->
+            <Entry x:Name="UserGuess" Placeholder="Your Guess" WidthRequest="100" HorizontalTextAlignment="Center" IsVisible="False"
+                   VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" MaxLength="5" TextTransform="Uppercase">
+                <Entry.Keyboard>
+                    <Keyboard x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <KeyboardFlags>CapitalizeCharacter</KeyboardFlags>
+                        </x:Arguments>
+                    </Keyboard>
+                </Entry.Keyboard>
+            </Entry>
+            <!-- New Wordle/Enter button -->
+            <Button x:Name="EnterButton" Clicked="EnterButton_OnClicked" Text="New Wordle" MaximumWidthRequest="150" Margin="10"></Button>
+        </VerticalStackLayout>
         <Label x:Name="test" Text="Word is: "></Label>
     </VerticalStackLayout>
 </ContentPage>
