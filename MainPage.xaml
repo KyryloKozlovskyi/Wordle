@@ -12,107 +12,106 @@
               ColumnDefinitions="*,*,*,*,*"
               RowDefinitions="*,*,*,*,*,*">
             <!--  Frame row 1  -->
-            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="0" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="0" Grid.Column="3" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="0" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="0" Grid.Column="4" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
             <!--  Frame row 2  -->
-            <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="1" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="1" Grid.Column="2" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="1" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="1" Grid.Column="3" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="1" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="1" Grid.Column="4" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
             <!--  Frame row 3  -->
-            <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="2" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="2" Grid.Column="2" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="2" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="2" Grid.Column="3" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="2" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="2" Grid.Column="4" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
             <!--  Frame row 4  -->
-            <Frame Grid.Row="3" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="3" Grid.Column="0" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="3" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="3" Grid.Column="1" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="3" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="3" Grid.Column="2" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="3" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="3" Grid.Column="3" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="3" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="3" Grid.Column="4" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
             <!--  Frame row 5  -->
-            <Frame Grid.Row="4" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="4" Grid.Column="0" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="4" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="4" Grid.Column="1" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="4" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="4" Grid.Column="2" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="4" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="4" Grid.Column="3" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="4" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="4" Grid.Column="4" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
             <!--  Frame row 6  -->
-            <Frame Grid.Row="5" Grid.Column="0" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="W" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="5" Grid.Column="0" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="5" Grid.Column="1" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="O" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="5" Grid.Column="1" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="5" Grid.Column="2" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="R" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="5" Grid.Column="2" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="5" Grid.Column="3" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="D" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="5" Grid.Column="3" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Grid.Row="5" Grid.Column="4" BackgroundColor="#3A3A3C" Padding="0">
-                <Label Text="L" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Frame Grid.Row="5" Grid.Column="4" BackgroundColor="Black" Padding="0" BorderColor="#3A3A3C">
+                <Label Text="" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
         </Grid>
         <!-- User input -->
         <VerticalStackLayout HorizontalOptions="Center">
             <!-- Customized entry keyboard -->
-            <Entry x:Name="UserGuess" Placeholder="Your Guess" WidthRequest="100" HorizontalTextAlignment="Center" IsVisible="False"
-                   VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" MaxLength="5" TextTransform="Uppercase">
+            <Entry x:Name="UserGuess" Placeholder="Your Guess" WidthRequest="100" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" IsVisible="False" ClearButtonVisibility="WhileEditing" MaxLength="5" TextTransform="Uppercase">
                 <Entry.Keyboard>
                     <Keyboard x:FactoryMethod="Create">
                         <x:Arguments>

@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using Kotlin.Ranges;
+//using Kotlin.Ranges;
 using static Wordle.DownloadWords;
 
 namespace Wordle
@@ -10,6 +10,7 @@ namespace Wordle
         private static String path;
         private static String fullPath;
         private static String word;
+        private int tries = 0;
 
         static string GetRandomWord(string filePath)
         {
@@ -34,11 +35,11 @@ namespace Wordle
             InitializeComponent();
             // Download word list
             DownloadWords download = new DownloadWords();
-
         }
 
         private void EnterButton_OnClicked(object sender, EventArgs e)
         {
+            // Start the game
             if (word == null)
             {
                 // Enable entry. Change button text to "Enter"
@@ -51,10 +52,14 @@ namespace Wordle
             }
             else
             {
+                tries++;
+                // User input
                 string userInput = UserGuess.Text.ToLower();
+
                 // Loop through each row
-                for (int row = 0; row < WordleGrid.RowDefinitions.Count - 5; row++)
+                for (int row = tries - 1; row < tries; row++)
                 {
+                    //test.Text += WordleGrid.RowDefinitions.Count;
                     // Loop through each column
                     for (int column = 0; column < WordleGrid.ColumnDefinitions.Count; column++)
                     {
@@ -65,21 +70,24 @@ namespace Wordle
 
                         if (frame != null)
                         {
-                            // Change the background color of the Frame
-                            //frame.BackgroundColor = Color.FromRgb(0,0,100); // Replace "NewColorHex" with the desired color code
-
                             // Access the Label inside the Frame
                             Label label = frame.Content as Label;
 
                             if (label != null)
                             {
-                                char l = userInput[column];
+                                char lui = userInput[column]; // Get a letter from user input
+                                char lw = word[column]; // Get a letter from the random word
 
-                                label.Text = l.ToString().ToUpper();
+                                //test.Text += "LUI = " + lui + " ************* lW = " + lw;
+ 
+                                label.Text = lui.ToString().ToUpper(); 
 
-                                //test.Text = userInput;
-
-                                if (word.Contains(l.ToString()))
+                                // Change background color based
+                                 if(lui == lw)
+                                {
+                                    frame.BackgroundColor = Color.FromRgb(83, 141, 78); // Green
+                                }
+                                else if (word.Contains(lui.ToString()))
                                 {
                                     frame.BackgroundColor = Color.FromRgb(181, 159, 59); // Yellow
                                 }
@@ -87,8 +95,6 @@ namespace Wordle
                                 {
                                     frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
                                 }
-                                // Modify the properties of the Label
-                                //label.TextColor = Color.FromRgb(100,0,0);
                             }
                         }
                     }
