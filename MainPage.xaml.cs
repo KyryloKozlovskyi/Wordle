@@ -1,9 +1,4 @@
-﻿using System.Net;
-//using Android.Graphics.Fonts;
-//using Kotlin.Ranges;
-using static Wordle.DownloadWords;
-
-namespace Wordle
+﻿namespace Wordle
 {
     //C:\Users\galin\AppData\Local\Packages\cf61b0af-98d7-4a63-9711-ea3b84acd9b2_9zz4h110yvjzm\LocalState
     public partial class MainPage : ContentPage
@@ -13,6 +8,7 @@ namespace Wordle
         private static String word;
         private int tries = 0;
 
+        // Method to count letters. Return dict(letter - key, number of letters - value)
         static Dictionary<char, int> CountIdenticalLetters(string input)
         {
             Dictionary<char, int> letterCounts = new Dictionary<char, int>();
@@ -35,6 +31,7 @@ namespace Wordle
             return letterCounts;
         }
 
+        // Method to check user input
         string CheckUserInput(string str)
         {
             str = str.ToLower();
@@ -44,10 +41,12 @@ namespace Wordle
             }
             else
             {
-                DisplayAlert("Check your input", "Not in word list!", "OK");
+                DisplayAlert("Check your input", "The word is not on the list", "OK");
                 return "";
             }
         }
+
+        // Method to check if word is in the file
         bool IsWordInFile(string filePath, string userInput)
         {
             // Read all lines from the file
@@ -57,6 +56,7 @@ namespace Wordle
             return lines.Any(line => line.Equals(userInput));
         }
 
+        // Method to get random word from the file
         static string GetRandomWord(string filePath)
         {
             // Read all lines from the file
@@ -72,6 +72,48 @@ namespace Wordle
             return word[0];
         }
 
+        private void ResetGame()
+        {
+            // Reset word and tries
+            word = null;
+            tries = 0;
+
+            // Clear the entered text
+            UserGuess.Text = "";
+
+            // Reset labels and backgrounds in the grid
+            foreach (Frame frame in WordleGrid.Children.OfType<Frame>())
+            {
+                Label label = frame.Content as Label;
+                if (label != null)
+                {
+                    label.Text = "";
+                }
+
+                frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
+            }
+
+            // Disable entry field
+            UserGuess.IsVisible = false;
+            UserGuess.IsEnabled = false;
+
+            // Disable enter button
+            EnterButton.IsVisible = false;
+            EnterButton.IsEnabled = false;
+
+            // Enable new wordle button
+            NewWordle.IsVisible = true;
+            NewWordle.IsEnabled = true;
+
+            // Disable reset button
+            ResetButton.IsVisible = false;
+            ResetButton.IsEnabled = false;
+
+            // Clear the test label if needed
+            test.Text = "";
+        }
+
+        // Main
         public MainPage()
         {
             // Word file path
@@ -82,8 +124,11 @@ namespace Wordle
             DownloadWords download = new DownloadWords();
         }
 
+        // New Wordle button
         private void NewWordle_OnClicked(object sender, EventArgs e)
         {
+            ResetGame(); // resets the game
+
             // Enable entry field 
             UserGuess.IsVisible = true;
             UserGuess.IsEnabled = true;
@@ -102,118 +147,139 @@ namespace Wordle
 
             // Get a random word from the file
             //word = GetRandomWord(fullPath).ToLower();
-            word = "razor"; //GetRandomWord(fullPath);
+            word = "idols";//GetRandomWord(fullPath);
             test.Text = word;
         }
 
         private void EnterButton_OnClicked(object sender, EventArgs e)
         {
+            // Array to keep track of correct letters
+            bool[] correctLetters = new bool[word.Length];
+
             // Dictionaries to keep track of letters
             Dictionary<char, int> letterCounts = CountIdenticalLetters(word);
             Dictionary<char, int> userInputLetterCounts = new Dictionary<char, int>();
 
             // User input + validation
-            if (UserGuess.Text != null)
+            if (!string.IsNullOrEmpty(UserGuess.Text))
             {
                 string userInput = UserGuess.Text.ToLower();
+
+                if (CheckUserInput(userInput) != "")
                 {
-                    if (CheckUserInput(userInput) != "")
+                    // Keeps track of remaining attempts
+                    tries++;
+
+                    // Identify correct letters
+                    for (int i = 0; i < word.Length; i++)
                     {
-                        // Keeps track of remaining attempts
-                        tries++;
+                        char lui = userInput[i]; // Get a letter from user input
+                        char lw = word[i]; // Get a letter from the word
 
-                        // Loop through each row
-                        for (int row = tries - 1; row < tries; row++)
+                        if (lui == lw)
                         {
-                            // Loop through each column
-                            for (int column = 0; column < WordleGrid.ColumnDefinitions.Count; column++)
+                            correctLetters[i] = true;
+                            letterCounts[lw]--; // Decrement for the used letter
+                        }
+                    }
+
+                    // Loop through each row
+                    for (int row = tries - 1; row < tries; row++)
+                    {
+                        // Loop through each column
+                        for (int column = 0; column < WordleGrid.ColumnDefinitions.Count; column++)
+                        {
+                            // Get the Frame at the current row and column
+                            Frame frame = WordleGrid.Children
+                              .OfType<Frame>()
+                              .FirstOrDefault(f => Grid.GetRow(f) == row && Grid.GetColumn(f) == column);
+
+                            if (frame != null)
                             {
-                                // Get the Frame at the current row and column
-                                Frame frame = WordleGrid.Children
-                                    .OfType<Frame>()
-                                    .FirstOrDefault(f => Grid.GetRow(f) == row && Grid.GetColumn(f) == column);
+                                // Access the Label inside the Frame
+                                Label label = frame.Content as Label;
 
-                                if (frame != null)
+                                if (label != null)
                                 {
-                                    // Access the Label inside the Frame
-                                    Label label = frame.Content as Label;
+                                    char lui = userInput[column]; // Get a letter from user input
+                                    char lw = word[column]; // Get a letter from the word
 
-                                    if (label != null)
+                                    label.Text = lui.ToString().ToUpper();
+
+                                    // Change background color based on the letter
+                                    if (correctLetters[column])
                                     {
-                                        char lui = userInput[column]; // Get a letter from user input
-                                        char lw = word[column]; // Get a letter from the word
-
-                                        label.Text = lui.ToString().ToUpper();
-
-                                        // Change background color based on the letter
-                                        if (lui == lw)
+                                        frame.BackgroundColor = Color.FromRgb(83, 141, 78); // Green
+                                    }
+                                    else if (word.Contains(lui.ToString()) && letterCounts[lui] > 0)
+                                    {
+                                        // Check if the letter is used in the user input
+                                        if (userInputLetterCounts.ContainsKey(lui) && userInputLetterCounts[lui] > 0)
                                         {
-                                            frame.BackgroundColor = Color.FromRgb(83, 141, 78); // Green
-                                            letterCounts[lw]--; // Decrement for the used letter
-                                        }
-                                        else if (word.Contains(lui.ToString()) && letterCounts[lui] > 0)
-                                        {
-                                            // Check if the letter is used in the user input
-                                            if (userInputLetterCounts.ContainsKey(lui) && userInputLetterCounts[lui] > 0)
-                                            {
-                                                // If the letter is already used, color it gray
-                                                frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
-                                            }
-                                            else
-                                            {
-                                                frame.BackgroundColor = Color.FromRgb(181, 159, 59); // Yellow
-                                                // Increment the count for the used letter in user input
-                                                if (userInputLetterCounts.ContainsKey(lui))
-                                                    userInputLetterCounts[lui]++;
-                                                else
-                                                    userInputLetterCounts[lui] = 1;
-                                            }
+                                            // If the letter is already used, color it gray
+                                            frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
                                         }
                                         else
                                         {
-                                            // Else color the background gray
-                                            frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
+                                            frame.BackgroundColor = Color.FromRgb(181, 159, 59); // Yellow
+                                                                                                 // Increment the count for the used letter in user input
+                                            userInputLetterCounts[lui] = 1;
                                         }
+                                    }
+                                    else
+                                    {
+                                        // Else color the background gray
+                                        frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
                                     }
                                 }
                             }
-
-                            // Break the loop if the word is correct. Reset the game
-                            if (userInput == word)
-                            {
-                                DisplayAlert("You got it right!",
-                                    "The word is: " + word.ToUpper() + "\nIt took you " + tries + " tries!", "OK");
-                                // Disable entry field
-                                UserGuess.IsVisible = false;
-                                UserGuess.IsEnabled = false;
-                                break;
-                            }
-                            // break the loop if user guessed 6 times
-                            else if (tries == 6)
-                            {
-                                // Disable reset btn
-                                ResetButton.IsEnabled = false;
-                                ResetButton.IsVisible = false;
-                                // Enable new wordle btn
-                                NewWordle.IsVisible = true;
-                                NewWordle.IsEnabled = true;
-
-                                DisplayAlert("You didn't get it!",
-                                    "The word is: " + word.ToUpper() + "\n", "OK");
-
-                                break;
-                            }
                         }
+                    }
+
+                    // Break the loop if the word is correct. Reset the game
+                    if (correctLetters.All(x => x))
+                    {
+                        DisplayAlert("You got it right!",
+                          "The word is: " + word.ToUpper() + "\nNumber of tries: " + tries, "OK");
+                        // Disable entry field
+                        UserGuess.IsVisible = false;
+                        UserGuess.IsEnabled = false;
+
+                        // Disable enter button
+                        EnterButton.IsVisible = false;
+                        EnterButton.IsEnabled = false;
+                    }
+                    // Break the loop if the maximum number of tries is reached
+                    else if (tries == 6)
+                    {
+                        // Disable reset btn
+                        ResetButton.IsEnabled = false;
+                        ResetButton.IsVisible = false;
+
+                        // Enable new wordle btn
+                        NewWordle.IsVisible = true;
+                        NewWordle.IsEnabled = true;
+
+                        // Disable enter button
+                        EnterButton.IsVisible = false;
+                        EnterButton.IsEnabled = false;
+
+                        // Disable entry field
+                        UserGuess.IsVisible = false;
+                        UserGuess.IsEnabled = false;
+
+                        DisplayAlert("You got it wrong!",
+                          "The word is: " + word.ToUpper() + "\n", "OK");
                     }
                 }
             }
         }
 
-        // The CountIdenticalLetters method remains the same as before
-
+        // Reset btn
         private void ResetButton_OnClicked(object sender, EventArgs e)
         {
             // Reset the current game and get a new word
+            ResetGame();
         }
     }
 }
