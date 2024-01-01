@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.IO;
+using System.Text.Json;
 
 namespace Wordle
 {
@@ -71,17 +73,27 @@ namespace Wordle
         //Write data to the player file
         private async Task WriteStats()
         {
-            string playerFilePath = Path.Combine(path, $"{playerName}.txt");
-
-            // Append information to an existing player file
-            using (StreamWriter writer = File.AppendText(playerFilePath))
+            try
             {
-                // Append additional information (timestamp, score, etc.)
-                writer.WriteLine(gameStartTime);
-                writer.WriteLine(tries);
-                writer.WriteLine(word);
-            }
+                // Create an object to represent your game stats
+                var gameStats = new
+                {
+                    Timestamp = gameStartTime,
+                    Tries = tries,
+                    Word = word
+                };
 
+                // Serialize the object to JSON
+                string jsonStats = JsonSerializer.Serialize(gameStats);
+
+                // Append the JSON data to the player file
+                string playerFilePath = Path.Combine(path, $"{playerName}.txt");
+                await File.AppendAllTextAsync(playerFilePath, jsonStats + Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error writing game stats: {ex.Message}");
+            }
         }
 
         // Close the app
