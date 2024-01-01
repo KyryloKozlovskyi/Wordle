@@ -1,4 +1,10 @@
-﻿namespace Wordle
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Wordle
 {
     //C:\Users\galin\AppData\Local\Packages\cf61b0af-98d7-4a63-9711-ea3b84acd9b2_9zz4h110yvjzm\LocalState
     public partial class MainPage : ContentPage
@@ -7,6 +13,14 @@
         private static String fullPath;
         private static String word;
         private int tries = 0;
+
+        // Rotate frame (Row) animation
+
+        private async Task RotateFrame(Frame frame)
+        {
+            await frame.RotateXTo(360, 1000); // Rotate the frame 360 degrees in 1000 milliseconds
+            frame.Rotation = 0; // Reset the rotation after the animation
+        }
 
         // Method to count letters. Return dict(letter - key, number of letters - value)
         static Dictionary<char, int> CountIdenticalLetters(string input)
@@ -90,7 +104,7 @@
                     label.Text = "";
                 }
 
-                frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
+                frame.BackgroundColor = Colors.Black; 
             }
 
             // Disable entry field
@@ -146,12 +160,11 @@
             ResetButton.IsEnabled = true;
 
             // Get a random word from the file
-            //word = GetRandomWord(fullPath).ToLower();
-            word = "idols";//GetRandomWord(fullPath);
+            word = GetRandomWord(fullPath);
             test.Text = word;
         }
 
-        private void EnterButton_OnClicked(object sender, EventArgs e)
+        private async void EnterButton_OnClicked(object sender, EventArgs e)
         {
             // Array to keep track of correct letters
             bool[] correctLetters = new bool[word.Length];
@@ -210,6 +223,7 @@
                                     if (correctLetters[column])
                                     {
                                         frame.BackgroundColor = Color.FromRgb(83, 141, 78); // Green
+                                        await RotateFrame(frame);
                                     }
                                     else if (word.Contains(lui.ToString()) && letterCounts[lui] > 0)
                                     {
@@ -218,28 +232,30 @@
                                         {
                                             // If the letter is already used, color it gray
                                             frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
+                                            await RotateFrame(frame);
                                         }
                                         else
                                         {
                                             frame.BackgroundColor = Color.FromRgb(181, 159, 59); // Yellow
                                                                                                  // Increment the count for the used letter in user input
                                             userInputLetterCounts[lui] = 1;
+                                            await RotateFrame(frame);
                                         }
                                     }
                                     else
                                     {
                                         // Else color the background gray
                                         frame.BackgroundColor = Color.FromRgb(58, 58, 60); // Gray
+                                        await RotateFrame(frame);
                                     }
                                 }
                             }
                         }
                     }
-
                     // Break the loop if the word is correct. Reset the game
                     if (correctLetters.All(x => x))
                     {
-                        DisplayAlert("You got it right!",
+                        await DisplayAlert("You got it right!",
                           "The word is: " + word.ToUpper() + "\nNumber of tries: " + tries, "OK");
                         // Disable entry field
                         UserGuess.IsVisible = false;
@@ -268,7 +284,7 @@
                         UserGuess.IsVisible = false;
                         UserGuess.IsEnabled = false;
 
-                        DisplayAlert("You got it wrong!",
+                        await DisplayAlert("You got it wrong!",
                           "The word is: " + word.ToUpper() + "\n", "OK");
                     }
                 }

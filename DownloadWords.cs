@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wordle
 {
-    public partial class DownloadWords
+    public class DownloadWords
     {
         // Constructor used to run the code
         public DownloadWords()
