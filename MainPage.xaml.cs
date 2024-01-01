@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Wordle
 {
@@ -11,11 +12,86 @@ namespace Wordle
     {
         private static String path;
         private static String fullPath;
+        private static String playerFilePath;
         private static String word;
         private int tries = 0;
+        private static string playerName;
+        private static DateTime gameStartTime;
 
-        // Rotate frame (Row) animation
+        // Ask for player name
+        private async void AskForPlayerName()
+        {
+            // Check if the player file already exists
+            if (!File.Exists(playerFilePath))
+            {
 
+                // Prompt the user to enter a player name
+                playerName = await DisplayPromptAsync("Player Name", "Please enter your player name", maxLength: 50);
+
+                // Check if the player name is provided
+                if (!string.IsNullOrWhiteSpace(playerName))
+                {
+                    // Create a player file if it doesn't exist
+                    await CreatePlayerFile();
+                }
+                else
+                {
+                    // If no player name is provided, show an alert and close the app
+                    await DisplayAlert("Error", "Player name is required!", "OK");
+                    CloseApp();
+                }
+            }
+        }
+
+        // Create player file
+        private async Task CreatePlayerFile()
+        {
+            try
+            {
+            
+                // Combine the directory path and player name to get the file path
+                playerFilePath = Path.Combine(path, $"{playerName}.txt");
+
+                // Check if the player file already exists
+                if (!File.Exists(playerFilePath))
+                {
+                    // Create a new player file
+                    using (StreamWriter writer = File.CreateText(playerFilePath))
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error creating player file: {ex.Message}");
+            }
+        }
+
+        //Write data to the player file
+        private async Task WriteStats()
+        {
+            string playerFilePath = Path.Combine(path, $"{playerName}.txt");
+
+            // Append information to an existing player file
+            using (StreamWriter writer = File.AppendText(playerFilePath))
+            {
+                // Append additional information (timestamp, score, etc.)
+                writer.WriteLine(gameStartTime);
+                writer.WriteLine(tries);
+                writer.WriteLine(word);
+            }
+
+        }
+
+        // Close the app
+        private void CloseApp()
+        {
+            // Close the app
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        // Frame animation
         private async Task RotateFrame(Frame frame)
         {
             await frame.RotateXTo(360, 750); // Rotate the frame 360 degrees in 1000 milliseconds
@@ -142,7 +218,10 @@ namespace Wordle
         // New Wordle button
         private void NewWordle_OnClicked(object sender, EventArgs e)
         {
-            ResetGame(); // resets the game
+            AskForPlayerName();
+
+            // Get the timestamp at the start of the game
+            gameStartTime = DateTime.Now;
 
             // Enable entry field 
             UserGuess.IsVisible = true;
@@ -260,6 +339,7 @@ namespace Wordle
                     {
                         await DisplayAlert("You got it right!",
                           "The word is: " + word.ToUpper() + "\nNumber of tries: " + tries, "OK");
+                        await WriteStats();
                         // Disable entry field
                         UserGuess.IsVisible = false;
                         UserGuess.IsEnabled = false;
@@ -271,6 +351,7 @@ namespace Wordle
                     // Break the loop if the maximum number of tries is reached
                     else if (tries == 6)
                     {
+                        await WriteStats();
                         // Disable reset btn
                         ResetButton.IsEnabled = false;
                         ResetButton.IsVisible = false;
