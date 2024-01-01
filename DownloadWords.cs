@@ -32,12 +32,12 @@ namespace Wordle
                 {
                     string content = await DownloadData(url);
                     SaveToFile(fullPath, content);
-                    await Shell.Current.DisplayAlert("Saved!", "Words file has been saved!", "OK!");
+                    //await Shell.Current.DisplayAlert("Saved!", "Words file has been saved!", "OK!");
 
                 }
                 catch (Exception ex)
                 {
-                    await Shell.Current.DisplayAlert("Error occured!", "Words file hasn't been saved!", "ERROR!");
+                    //await Shell.Current.DisplayAlert("Error occured!", "Words file hasn't been saved!", "ERROR!");
                 }
             }
         }

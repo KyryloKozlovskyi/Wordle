@@ -18,8 +18,8 @@ namespace Wordle
 
         private async Task RotateFrame(Frame frame)
         {
-            await frame.RotateXTo(360, 1000); // Rotate the frame 360 degrees in 1000 milliseconds
-            frame.Rotation = 0; // Reset the rotation after the animation
+            await frame.RotateXTo(360, 750); // Rotate the frame 360 degrees in 1000 milliseconds
+            frame.RotationX = 0; // Reset the rotation after the animation
         }
 
         // Method to count letters. Return dict(letter - key, number of letters - value)
@@ -98,13 +98,14 @@ namespace Wordle
             // Reset labels and backgrounds in the grid
             foreach (Frame frame in WordleGrid.Children.OfType<Frame>())
             {
+                frame.BackgroundColor = Colors.Black;
+                frame.RotationX = 0;
+
                 Label label = frame.Content as Label;
                 if (label != null)
                 {
                     label.Text = "";
                 }
-
-                frame.BackgroundColor = Colors.Black; 
             }
 
             // Disable entry field
@@ -166,6 +167,8 @@ namespace Wordle
 
         private async void EnterButton_OnClicked(object sender, EventArgs e)
         {
+            EnterButton.IsEnabled = false;
+            ResetButton.IsEnabled = false;
             // Array to keep track of correct letters
             bool[] correctLetters = new bool[word.Length];
 
@@ -289,6 +292,8 @@ namespace Wordle
                     }
                 }
             }
+            EnterButton.IsEnabled = true;
+            ResetButton.IsEnabled = true;
         }
 
         // Reset btn
