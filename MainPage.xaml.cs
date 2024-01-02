@@ -187,6 +187,7 @@ namespace Wordle
             foreach (Frame frame in WordleGrid.Children.OfType<Frame>())
             {
                 frame.BackgroundColor = Colors.Black;
+                frame.BorderColor = Color.FromArgb("#3A3A3C");
                 frame.RotationX = 0;
 
                 Label label = frame.Content as Label;
@@ -317,6 +318,7 @@ namespace Wordle
                                     if (correctLetters[column])
                                     {
                                         frame.BackgroundColor = Color.FromRgb(83, 141, 78); // Green
+                                        frame.BorderColor = Color.FromRgb(83, 141, 78);
                                         await RotateFrame(frame);
                                     }
                                     else if (word.Contains(lui.ToString()) && letterCounts[lui] > 0)
@@ -331,7 +333,8 @@ namespace Wordle
                                         else
                                         {
                                             frame.BackgroundColor = Color.FromRgb(181, 159, 59); // Yellow
-                                                                                                 // Increment the count for the used letter in user input
+                                            frame.BorderColor = Color.FromRgb(181, 159, 59);
+                                            // Increment the count for the used letter in user input
                                             userInputLetterCounts[lui] = 1;
                                             await RotateFrame(frame);
                                         }
@@ -364,14 +367,6 @@ namespace Wordle
                     else if (tries == 6)
                     {
                         await WriteStats();
-                        // Disable reset btn
-                        ResetButton.IsEnabled = false;
-                        ResetButton.IsVisible = false;
-
-                        // Enable new wordle btn
-                        NewWordle.IsVisible = true;
-                        NewWordle.IsEnabled = true;
-
                         // Disable enter button
                         EnterButton.IsVisible = false;
                         EnterButton.IsEnabled = false;
