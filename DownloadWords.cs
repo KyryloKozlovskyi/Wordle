@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Wordle
 {
     public class DownloadWords
@@ -13,17 +12,14 @@ namespace Wordle
         {
             Download();
         }
-
         // Run the DownloadData and SaveToFile methods
         public static async Task Download()
         {
             // Full path 
             var path = FileSystem.Current.AppDataDirectory;
             var fullPath = Path.Combine(path, "words.txt");
-
             // Url
             string url = "https://raw.githubusercontent.com/DonH-ITS/jsonfiles/main/words.txt";
-
             // Check if the file exists
             if (!File.Exists(fullPath))
             {
@@ -32,16 +28,14 @@ namespace Wordle
                 {
                     string content = await DownloadData(url);
                     SaveToFile(fullPath, content);
-                    //await Shell.Current.DisplayAlert("Saved!", "Words file has been saved!", "OK!");
-
+                    //await Shell.Current.DisplayAlert("Saved!", "Words file has been saved!", "OK!"); - Might break the code
                 }
                 catch (Exception ex)
                 {
-                    //await Shell.Current.DisplayAlert("Error occured!", "Words file hasn't been saved!", "ERROR!");
+                    //await Shell.Current.DisplayAlert("Error occured!", "Words file hasn't been saved!", "ERROR!"); - Might break the code
                 }
             }
         }
-
         // Download data from the website
         static async Task<string> DownloadData(string url)
         {
@@ -50,7 +44,6 @@ namespace Wordle
                 return await client.GetStringAsync(url);
             }
         }
-
         // Save downloaded data to a file
         static void SaveToFile(string filePath, string content)
         {

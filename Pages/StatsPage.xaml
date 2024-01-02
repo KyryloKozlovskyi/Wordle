@@ -4,10 +4,11 @@
              x:Class="Wordle.StatsPage"
              Title="STATS">
     <!--Stats page-->
-    <ScrollView HeightRequest="420" WidthRequest="350" VerticalOptions="Start">
+    <ScrollView WidthRequest="350" VerticalOptions="Start">
         <VerticalStackLayout>
             <Label 
-                Text="Time: 21:07 Date: 26/12/2023 Word: Sport Number of Guesses: 6 Emoji grid: ⬜ 🟨 🟩 "
+                x:Name="StatsLabel"
+                Text=""
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
         </VerticalStackLayout>
