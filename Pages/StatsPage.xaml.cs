@@ -45,6 +45,7 @@ public partial class StatsPage : ContentPage
                 }
                 // Display the formatted stats in a label (assuming you have a label named 'statsLabel')
                 StatsLabel.Text = formattedStats.ToString();
+                HeaderLabel.Text = "Your Stats";
             }
             catch (Exception ex)
             {

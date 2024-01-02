@@ -4,56 +4,21 @@
              x:Class="Wordle.SettingsPage"
              Title="SETTINGS">
     <!--Settings page-->
-    <VerticalStackLayout HorizontalOptions="Center" Margin="20">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="350">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <!--Dark Theme Switch-->
-        <HorizontalStackLayout Spacing="20">
-            <Label
-                Text="Dark Theme"
-                VerticalOptions="Center" 
-                HorizontalOptions="Start" />
-            <Switch 
-                VerticalOptions="Center" 
-                HorizontalOptions="End"/>
-        </HorizontalStackLayout>
-        <Line X1="350"
-              Y1="0"
-              X2="0"
-              Y2="0"
-              Stroke="#3A3A3C" />
-        <!--Easy Mode Switch-->
-        <HorizontalStackLayout Spacing="20">
-            <Label
-                Text="Easy Mode"
-                VerticalOptions="Center" 
-                HorizontalOptions="Start" />
-            <Switch 
-                VerticalOptions="Center" 
-                HorizontalOptions="End"/>
-        </HorizontalStackLayout>
-        <Line X1="350"
-              Y1="0"
-              X2="0"
-              Y2="0"
-              Stroke="#3A3A3C" />
-        <!--Font Size Slider-->
-        <HorizontalStackLayout HorizontalOptions="Center" Margin="20" Spacing="20">
-            <Label
-                Text="Font Size"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-            <Slider
-                Minimum="0"
-                Maximum="100"
-                Value="0"
-                HeightRequest="20"
-                WidthRequest="250"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center"/>
-        </HorizontalStackLayout>
-        <Line X1="350"
-              Y1="0"
-              X2="0"
-              Y2="0"
-              Stroke="#3A3A3C" />
-    </VerticalStackLayout>
+        <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Dark Theme" VerticalOptions="Center" HorizontalOptions="Start" />
+            <Switch x:Name="DarkThemeSwitch" IsToggled="{Binding DarkTheme, Mode=TwoWay}" Grid.Column="1" HorizontalOptions="End" />
+        </Grid>
+        <BoxView Grid.Row="1" HeightRequest="1" Color="#3A3A3C" HorizontalOptions="FillAndExpand" />
+    </Grid>
 </ContentPage>

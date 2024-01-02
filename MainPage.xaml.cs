@@ -7,6 +7,7 @@ using System.Xml;
 using System.IO;
 using System.Text.Json;
 using Microsoft.Maui.Storage;
+using Microsoft.Maui.ApplicationModel;
 namespace Wordle
 {
     //C:\Users\galin\AppData\Local\Packages\cf61b0af-98d7-4a63-9711-ea3b84acd9b2_9zz4h110yvjzm\LocalState
@@ -18,7 +19,7 @@ namespace Wordle
         public static String playerFilePath;
         private static String word;
         private int tries = 0;
-        public static string playerName = "test"; // To avoid exception on if (!string.IsNullOrWhiteSpace(playerName)) check in Stats Page
+        public static string playerName = "test"; // = "test"To avoid exception on if (!string.IsNullOrWhiteSpace(playerName)) check in Stats Page
         private static DateTime gameStartTime;
         private String gameResult;
         List<string> colorEmojis = new List<string>();
@@ -199,12 +200,15 @@ namespace Wordle
             // Disable reset button
             ResetButton.IsVisible = false;
             ResetButton.IsEnabled = false;
+
             // Clear the test label if needed
             test.Text = "";
         }
         // Main
         public MainPage()
         {
+            Application.Current.UserAppTheme = AppTheme.Dark;
+
             // Word file path
             path = FileSystem.Current.AppDataDirectory;
             fullPath = Path.Combine(path, "words.txt");
@@ -232,6 +236,7 @@ namespace Wordle
             ResetButton.IsEnabled = true;
             // Get a random word from the file
             word = GetRandomWord(fullPath);
+            // Used for testing (Displays the word)
             test.Text = word;
         }
         // Enter btn
