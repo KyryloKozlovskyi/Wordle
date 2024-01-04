@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Wordle.MainPage"
              Title="WORDLE">
     <!--Wordle page-->
@@ -110,7 +111,7 @@
         <!-- User input -->
         <VerticalStackLayout HorizontalOptions="Center">
             <!-- Customized entry keyboard -->
-            <Entry x:Name="UserGuess" Placeholder="Your Guess" WidthRequest="100" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" IsVisible="False" IsEnabled="False" ClearButtonVisibility="WhileEditing" MaxLength="5" TextTransform="Uppercase">
+            <Entry x:Name="UserGuess" Placeholder="Your Guess" WidthRequest="100" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" IsVisible="False" IsEnabled="False" ClearButtonVisibility="WhileEditing" MaxLength="5" TextTransform="Uppercase" TextColor="Gray">
                 <Entry.Keyboard>
                     <Keyboard x:FactoryMethod="Create">
                         <x:Arguments>
@@ -124,6 +125,6 @@
             <Button x:Name="EnterButton" Clicked="EnterButton_OnClicked" Text="Enter" MaximumWidthRequest="150" Margin="10" IsVisible="False" IsEnabled="False"></Button>
             <Button x:Name="ResetButton" Clicked="ResetButton_OnClicked" Text="Reset" MaximumWidthRequest="150" Margin="10" IsVisible="False" IsEnabled="False"></Button>
         </VerticalStackLayout>
-        <Label x:Name="test" Text="Word is: "></Label>
+        <!--<Label x:Name="test" Text="Word is: "></Label>-->
     </VerticalStackLayout>
 </ContentPage>

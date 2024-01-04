@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using System.IO;
-using System.Text.Json;
-using Microsoft.Maui.Storage;
-using Microsoft.Maui.ApplicationModel;
+﻿using System.Text.Json;
+
 namespace Wordle
 {
-    //C:\Users\galin\AppData\Local\Packages\cf61b0af-98d7-4a63-9711-ea3b84acd9b2_9zz4h110yvjzm\LocalState
     //   \ud83c\udf2b\ufe0f - Gray           \ud83d\udfe9 - Green             \ud83d\udfe8 - Yellow
     public partial class MainPage : ContentPage
     {
@@ -19,7 +10,7 @@ namespace Wordle
         public static String playerFilePath;
         private static String word;
         private int tries = 0;
-        public static string playerName = "test"; // = "test"To avoid exception on if (!string.IsNullOrWhiteSpace(playerName)) check in Stats Page
+        public static string playerName = "test"; // = "test" To avoid exception on if (!string.IsNullOrWhiteSpace(playerName)) check in Stats Page
         private static DateTime gameStartTime;
         private String gameResult;
         List<string> colorEmojis = new List<string>();
@@ -39,7 +30,6 @@ namespace Wordle
                 }
                 else
                 {
-                   // playerName = "autosave";
                     await CreatePlayerFile();
                     // If no player name is entered, show an alert and close the app
                     await DisplayAlert("Error", "Player name is required!", "OK");
@@ -58,8 +48,7 @@ namespace Wordle
                 if (!File.Exists(playerFilePath))
                 {
                     // Create a new player file
-                    using (StreamWriter writer = File.CreateText(playerFilePath))
-                    { }
+                    using (StreamWriter writer = File.CreateText(playerFilePath)) { }
                 }
             }
             catch (Exception ex)
@@ -89,7 +78,7 @@ namespace Wordle
                 // Serialize to JSON
                 string jsonStats = JsonSerializer.Serialize(gameStats);
                 // Write the JSON data to the file
-                string playerFilePath = Path.Combine(path,$"{playerName}.txt");
+                string playerFilePath = Path.Combine(path, $"{playerName}.txt");
                 await File.AppendAllTextAsync(playerFilePath, jsonStats + Environment.NewLine);
             }
             catch (Exception ex)
@@ -157,7 +146,7 @@ namespace Wordle
         {
             // Read all lines from the file
             string[] lines = File.ReadAllLines(filePath);
-            // Use a random number generator to select a word
+            // Random number generator to select a word
             Random random = new Random();
             int randomIndex = random.Next(0, lines.Length);
             string randomLine = lines[randomIndex];
@@ -200,9 +189,8 @@ namespace Wordle
             // Disable reset button
             ResetButton.IsVisible = false;
             ResetButton.IsEnabled = false;
-
-            // Clear the test label if needed
-            test.Text = "";
+            // Test code
+            //test.Text = "";
         }
         // Main
         public MainPage()
@@ -237,7 +225,7 @@ namespace Wordle
             // Get a random word from the file
             word = GetRandomWord(fullPath);
             // Used for testing (Displays the word)
-            test.Text = word;
+            //test.Text = word;
         }
         // Enter btn
         private async void EnterButton_OnClicked(object sender, EventArgs e)
@@ -353,6 +341,7 @@ namespace Wordle
                     }
                 }
             }
+            // Enable buttons
             EnterButton.IsEnabled = true;
             ResetButton.IsEnabled = true;
         }

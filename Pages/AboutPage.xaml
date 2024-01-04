@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Wordle.AboutPage"
              Title="ABOUT">
     <!--About page. How to play/image examples-->
@@ -45,7 +46,7 @@
                     HorizontalOptions="Center" />
                 <!--Green box example-->
                 <Image Source="example1.png"/>
-                    <Label 
+                <Label 
                     Padding="10"
                     Text="The letter C is in the word and in the correct place."
                     FontSize="14"
@@ -85,7 +86,7 @@
                     FontSize="14"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start" />
-                </VerticalStackLayout>
+            </VerticalStackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>
